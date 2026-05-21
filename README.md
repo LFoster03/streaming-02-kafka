@@ -233,6 +233,19 @@ To start fresh, see
 [manage topics](https://denisecase.github.io/pro-analytics-02/kafka/manage-topics/)
 to delete the topic and recreate it.
 
+### Technical Modifications
+This project improves the basic Kafka streaming example by adding a more realistic partitioning strategy in the producer and a data transformation step in the consumer.
+
+#### Producer
+The producer was updated to use customer_id as the Kafka message key instead of region_id. This change partitions data by customer, enabling per-customer ordering of events and better reflecting real-world streaming systems.
+
+#### Consumer
+The consumer was modified to transform each message before saving it. This adds derived fields and produces an enriched dataset suitable for analysis instead of just raw event storage.
+
+### Insights
+New Fields: Modified consumer pipeline to enrich Kafka messages by computing total_price (unit_price × quantity), normalizing region_id to lowercase, and adding a processed_by lineage field. Output is written to a transformed CSV for downstream analysis.
+Together, these changes turn the pipeline into a simple streaming ETL system where Kafka transports events, the producer defines partitioning by customer, and the consumer enriches data before writing it to CSV.
+
 </details>
 
 ## Notes
