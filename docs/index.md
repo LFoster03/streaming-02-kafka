@@ -27,7 +27,8 @@ The producer uses a CSV file named:
 
   - data/sales.csv
 
-This dataset contains simulated e-commerce sales transactions. Each record represents a single order event.
+This dataset contains simulated e-commerce sales transactions.
+Each record represents a single order event.
 
 Each row includes fields such as:
 
@@ -55,15 +56,19 @@ The producer sends each row from the CSV as a JSON-like Kafka message.
 - Message key: customer_id
 - Message content: full sales record (row-based dictionary)
 
-The key modification made to the producer was changing the partitioning strategy so messages are keyed by customer instead of region, improving grouping by customer behavior in Kafka partitions.
+The key modification made to the producer was changing the
+partitioning strategy so messages are keyed by customer instead
+of region, improving grouping by customer behavior in Kafka partitions.
 
 ### Consumer Processing
 
-The consumer reads messages from the same Kafka topic and processes them sequentially.
+The consumer reads messages from the same Kafka topic and
+processes them sequentially.
 
 - It consumes all available messages (3 messages in this run)
 - It logs each raw message to the terminal
-- It writes processed records to a CSV file: data/output/consumed_sales_modified.csv
+- It writes processed records to a CSV file:
+  data/output/consumed_sales_modified.csv
 
 The consumer was extended with a transformation step that:
 
@@ -101,7 +106,8 @@ The final output file: data/output/consumed_sales_modified.csv
 
 ### Interpretation
 
-This Kafka streaming workflow demonstrates how raw event data can be transformed into analytics-ready data in real time.
+This Kafka streaming workflow demonstrates how raw event data c
+an be transformed into analytics-ready data in real time.
 
 Key changes from the original example include:
 
@@ -115,4 +121,6 @@ From a business perspective, this pipeline could be used to:
 - Analyze regional performance trends (region_clean)
 - Trace data lineage for debugging and auditing (processed_by)
 
-Overall, the system shows how streaming data can be converted into structured datasets suitable for downstream business intelligence, reporting, or machine learning workflows.
+Overall, the system shows how streaming data can be converted
+into structured datasets suitable for downstream business intelligence,
+reporting, or machine learning workflows.
