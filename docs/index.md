@@ -25,27 +25,27 @@ to get these projects running on your machine.
 
 The producer uses a CSV file named:
 
-- data/sales.csv
+  - data/sales.csv
 
 This dataset contains simulated e-commerce sales transactions. Each record represents a single order event.
 
 Each row includes fields such as:
 
-- order_id
-- customer_id
-- region_id
-- product_id
-- unit_price
-- quantity
-- currency_code
-- device_type
-- payment_method
-- referral_source
-- datetime
-- customer_note
-- kafka_key
-- kafka_partition
-- kafka_offset
+  - order_id
+  - customer_id
+  - region_id
+  - product_id
+  - unit_price
+  - quantity
+  - currency_code
+  - device_type
+  - payment_method
+  - referral_source
+  - datetime
+  - customer_note
+  - kafka_key
+  - kafka_partition
+  - kafka_offset
 
 ### Kafka Messages
 
