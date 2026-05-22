@@ -24,10 +24,13 @@ to get these projects running on your machine.
 ### Dataset
 
 The producer uses a CSV file named:
-  - data/sales.csv
+
+- data/sales.csv
+
 This dataset contains simulated e-commerce sales transactions. Each record represents a single order event.
 
 Each row includes fields such as:
+
 - order_id
 - customer_id
 - region_id
